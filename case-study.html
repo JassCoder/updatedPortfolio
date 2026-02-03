@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jas | Case Study</title>
+  <meta name="description" content="Case study layout: overview, problems, solutions, outcomes." />
+  <link rel="stylesheet" href="css/case-study.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Jas</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="about.html" class="underline">About</a>
+        <a href="projects.html" class="underline">Projects</a>
+        <a href="case-study.html" class="underline active">Case Study</a>
+        <a href="contact.html" class="underline">Contact</a>
+        <a class="nav-cta" href="contact.html">
+          <span class="dot" aria-hidden="true"></span>
+          Let’s work
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <div class="pill"><span class="dot"></span> Case Study</div>
+      <h1>Luxe Dining Landing</h1>
+      <p class="sub">
+        Build a premium landing page that feels expensive, loads fast, and reads perfectly on mobile.
+      </p>
+      <div class="cover" aria-hidden="true"></div>
+    </section>
+
+    <section class="layout">
+      <article class="content reveal delay-1">
+        <section class="block">
+          <h2>Overview</h2>
+          <p>
+            The client needed a high-end restaurant landing page with clear CTA flow and strong visual hierarchy.
+            Constraint: keep it light and fast, no dependencies.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>Problems</h2>
+          <ul>
+            <li>Generic typography made the brand feel cheap.</li>
+            <li>Sections weren’t scannable on mobile.</li>
+            <li>Hover states and motion were either missing or too loud.</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>Solutions</h2>
+          <ul>
+            <li>Fluid typography using <code>clamp()</code> and controlled line-length.</li>
+            <li>Card-based layout with consistent spacing system.</li>
+            <li>Subtle motion: hover elevation, fades, gradient underline accents.</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>Outcome</h2>
+          <ul>
+            <li>Premium feel with minimal visual noise.</li>
+            <li>Mobile-first layout that stays readable.</li>
+            <li>Structure that scales to a full multi-page site.</li>
+          </ul>
+        </section>
+
+        <section class="next">
+          <a class="btn" href="projects.html">← Back to Projects</a>
+          <a class="btn btn-primary" href="contact.html">Start a project</a>
+        </section>
+      </article>
+
+      <aside class="aside reveal delay-2">
+        <h3>Project Details</h3>
+        <div class="kv">
+          <div class="row"><span>Role</span><strong>Design + Frontend</strong></div>
+          <div class="row"><span>Stack</span><strong>HTML / CSS</strong></div>
+          <div class="row"><span>Focus</span><strong>Typography + UI polish</strong></div>
+          <div class="row"><span>Motion</span><strong>Subtle</strong></div>
+          <div class="row"><span>Deliverable</span><strong>Landing + case study</strong></div>
+        </div>
+
+        <div class="callout">
+          <p><strong>Tip:</strong> Replace this content with real metrics later (load time, conversion, etc.).</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div>© <span id="year">2026</span> Jas.</div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

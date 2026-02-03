@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jas | Contact</title>
+    <meta
+      name="description"
+      content="Contact Jas for freelance UI/frontend work."
+    />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Jas</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="about.html" class="underline">About</a>
+          <a href="projects.html" class="underline">Projects</a>
+          <a href="case-study.html" class="underline">Case Study</a>
+          <a href="contact.html" class="underline active">Contact</a>
+          <a class="nav-cta" href="contact.html">
+            <span class="dot" aria-hidden="true"></span>
+            Let’s work
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-head reveal">
+        <span class="pill"
+          ><span class="dot"></span> Replies within 24–48h</span
+        >
+        <h1>Contact</h1>
+        <p>
+          Tell me what you’re building, timeline, and links you like. Vague
+          messages create vague results. Nature is healing.
+        </p>
+      </section>
+
+      <section class="layout">
+        <!-- Left: Contact info -->
+        <aside class="card reveal delay-1">
+          <h2>Let’s build something clean</h2>
+          <p class="muted">
+            Landing page, portfolio, UI refresh, or a full website. I’ll keep it
+            fast, readable, and annoyingly polished.
+          </p>
+
+          <div class="list">
+            <div class="row">
+              <span class="label">Email</span>
+              <a class="value underline" href="mailto:sainijaspreet1999@gmail.com"
+                >sainijaspreet1999@gmail.com</a
+              >
+            </div>
+            <div class="row">
+              <span class="label">Location</span>
+              <span class="value"> Barcelona / Remote</span>
+            </div>
+            <div class="row">
+              <span class="label">Availability</span>
+              <span class="value">Freelance, Fulltime, Part-time</span>
+            </div>
+          </div>
+
+          <div class="social">
+            <a
+              class="tag underline"
+              href="https://github.com/JassCoder"
+              title="GitHub link"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              class="tag underline"
+              href="https://www.linkedin.com/in/jaspretsinghanimator"
+              title="LinkedIn link"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              class="tag underline"
+              href="https://linktr.ee/jaspreetsingh_"
+              title="linktr link"
+              target="_blank"
+              >linktr</a
+            >
+          </div>
+
+          <div class="note">
+            <h3>What helps</h3>
+            <ul>
+              <li>Goal (sales, hiring, portfolio, brand)</li>
+              <li>Deadline + budget range</li>
+              <li>2–3 sites you like</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Right: Form -->
+        <section class="card reveal delay-2" aria-label="Contact form">
+          <h2>Send a message</h2>
+          <p class="muted">
+            This form is static. 
+          </p>
+
+          <form class="form" action="#" method="post">
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field two">
+              <div>
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@domain.com"
+                  required
+                />
+              </div>
+              <div>
+                <label for="type">Project type</label>
+                <input
+                  id="type"
+                  name="type"
+                  type="text"
+                  placeholder="Landing / Portfolio / UI"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Project details</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="What are we building? Timeline? Links you like?"
+                required
+              ></textarea>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Send</button>
+              <span class="hint"
+                >Or email directly:
+                <a class="underline" href="mailto:sainijaspreet1999@gmail.com"
+                  >sainijaspreet1999@gmail.com</a
+                ></span
+              >
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container foot">
+        <div>© <span id="year">2026</span> Jas.</div>
+        <div class="foot-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="case-study.html">Case Study</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jas | Home</title>
+    <meta
+      name="description"
+      content="Designer-level portfolio: clean UI, subtle motion, premium typography."
+    />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Jas</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="about.html" class="underline">About</a>
+          <a href="projects.html" class="underline">Projects</a>
+          <a href="case-study.html" class="underline">Case Study</a>
+          <a href="contact.html" class="underline">Contact</a>
+          <a class="nav-cta" href="contact.html">
+            <span class="dot" aria-hidden="true"></span>
+            Let’s work
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="reveal">
+            <span class="pill"
+              ><span class="dot"></span> Available for freelance · Frontend /
+              UI</span
+            >
+            <h1 class="headline">
+              Clean, fast websites with designer-level polish.
+            </h1>
+            <p class="subhead">
+              I build responsive interfaces that feel premium: crisp typography,
+              subtle motion, and layouts that don’t scream “template”.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="projects.html">View projects</a>
+              <a class="btn" href="case-study.html">Read a case study</a>
+              <a class="btn" href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <aside class="profile-card reveal delay-1" aria-label="Profile card">
+            <div class="mini-title">Profile</div>
+            <div class="profile-name">Jas</div>
+            <p class="profile-role">
+              Frontend Developer · UI / UX · HTML/CSS/JS
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">
+                <span>Focus</span><strong>Clean UI + performance</strong>
+              </div>
+              <div class="meta-row">
+                <span>Stack</span><strong>HTML · CSS · JS</strong>
+              </div>
+              <div class="meta-row">
+                <span>Open to</span><strong>Remote / Zagreb</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="quick-links">
+        <div class="container">
+          <div class="grid">
+            <a class="card" href="about.html">
+              <h2>About</h2>
+              <p>Short bio, strengths, and what you actually do.</p>
+            </a>
+
+            <a class="card" href="projects.html">
+              <h2>Projects</h2>
+              <p>Project cards with tags and clean UI.</p>
+            </a>
+
+            <a class="card" href="./projects/reels/index.html">
+              <h2>VFX and Animation reels</h2>
+              <p>vfx reels</p>
+            </a>
+
+            <a class="card" href="contact.html">
+              <h2>Contact</h2>
+              <p>Simple, readable, and easy to wire later.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container foot">
+        <div>© <span id="year">2026</span> Jas.</div>
+        <div class="foot-links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

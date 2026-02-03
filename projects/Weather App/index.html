@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Weather</h1>
+
+      <form id="searchForm" class="search">
+        <input id="cityInput" type="text" placeholder="Search city (e.g., Zagreb)" autocomplete="off" />
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="recent">
+        <div class="recent-head">
+          <h2>Recent</h2>
+          <button id="clearRecentBtn" class="ghost" type="button">Clear</button>
+        </div>
+        <div id="recentList" class="recent-list"></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <section id="currentCard" class="card hidden">
+        <div class="current-top">
+          <div>
+            <h2 id="place"></h2>
+            <p id="desc" class="muted"></p>
+          </div>
+          <img id="icon" alt="" />
+        </div>
+
+        <div class="current-temp">
+          <span id="temp"></span>
+          <span class="unit">°C</span>
+        </div>
+
+        <div class="grid">
+          <div class="tile">
+            <p class="label">Humidity</p>
+            <p id="humidity" class="value"></p>
+          </div>
+          <div class="tile">
+            <p class="label">Wind</p>
+            <p id="wind" class="value"></p>
+          </div>
+          <div class="tile">
+            <p class="label">Feels like</p>
+            <p id="feels" class="value"></p>
+          </div>
+          <div class="tile">
+            <p class="label">Pressure</p>
+            <p id="pressure" class="value"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="forecastCard" class="card hidden">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast" class="forecast"></div>
+      </section>
+    </main>
+
+    <footer class="footer muted">
+      Built with fetch + localStorage. Powered by your API key and patience.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

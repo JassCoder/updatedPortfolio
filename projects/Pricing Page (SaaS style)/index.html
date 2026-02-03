@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Pricing</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --muted:#97a3c2;
+      --text:#eaf0ff;
+      --line:rgba(255,255,255,.10);
+      --brand:#7c5cff;
+      --brand2:#21d4fd;
+      --shadow: 0 16px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(800px 450px at 80% 0%, rgba(33,212,253,.18), transparent 55%),
+        radial-gradient(900px 550px at 50% 110%, rgba(124,92,255,.15), transparent 55%),
+        var(--bg);
+      line-height:1.5;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+    /* Top */
+    header{
+      padding: 56px 0 24px;
+      text-align:center;
+    }
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 8px 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+    }
+    h1{
+      margin: 18px 0 10px;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.02em;
+    }
+    .sub{
+      margin: 0 auto;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* Toggle (CSS-only) */
+    .billing{
+      margin: 26px auto 0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap: 14px;
+    }
+    .billing input{ position:absolute; opacity:0; pointer-events:none; }
+    .seg{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:6px;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      min-width: 260px;
+      position:relative;
+    }
+    .seg label{
+      padding: 10px 14px;
+      text-align:center;
+      border-radius: 999px;
+      cursor:pointer;
+      color: var(--muted);
+      font-weight: 600;
+      user-select:none;
+      position:relative;
+      z-index:2;
+    }
+    /* slider pill */
+    .seg::before{
+      content:"";
+      position:absolute;
+      inset:6px;
+      width: calc(50% - 0px);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(33,212,253,.75));
+      box-shadow: 0 10px 30px rgba(124,92,255,.25);
+      transform: translateX(0%);
+      transition: transform .25s ease;
+      z-index:1;
+    }
+    #yearly:checked ~ header .seg::before{ transform: translateX(100%); }
+    #monthly:checked ~ header label[for="monthly"],
+    #yearly:checked  ~ header label[for="yearly"]{ color: #08102a; }
+
+    .save{
+      font-size: 13px;
+      color: var(--muted);
+      border:1px dashed rgba(33,212,253,.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(33,212,253,.08);
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 26px 0 14px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      transform: translateY(0);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(124,92,255,.45);
+      background: linear-gradient(180deg, rgba(124,92,255,.12), rgba(255,255,255,.03));
+    }
+    .card .inner{ padding: 20px; }
+    .plan{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+      margin-bottom: 10px;
+    }
+    .plan h3{ margin:0; font-size: 18px; letter-spacing:-.01em; }
+    .pill{
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+    }
+    .popular{
+      position:absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing:.02em;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(33,212,253,.75));
+      color: #08102a;
+      box-shadow: 0 12px 30px rgba(124,92,255,.25);
+    }
+    .desc{ margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+
+    .price{
+      display:flex;
+      align-items:flex-end;
+      gap:10px;
+      padding: 10px 0 6px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      margin-bottom: 14px;
+    }
+    .price .num{
+      font-size: 40px;
+      letter-spacing:-.03em;
+      line-height:1;
+      font-weight: 900;
+    }
+    .price .per{ color: var(--muted); font-size: 14px; padding-bottom: 5px; }
+
+    /* Monthly/Yearly swap (CSS-only) */
+    .price .monthly{ display:inline; }
+    .price .yearly{ display:none; }
+    #yearly:checked ~ main .price .monthly{ display:none; }
+    #yearly:checked ~ main .price .yearly{ display:inline; }
+
+    .btn{
+      display:inline-flex;
+      width:100%;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 800;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(33,212,253,.35); background: rgba(33,212,253,.08); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(33,212,253,.75));
+      color:#08102a;
+      border-color: transparent;
+    }
+    .btn.primary:hover{ background: linear-gradient(135deg, rgba(124,92,255,1), rgba(33,212,253,.9)); }
+
+    ul.feats{ list-style:none; padding: 14px 0 0; margin: 0; display:grid; gap:10px; }
+    .feats li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .tick{
+      width:18px; height:18px; border-radius: 6px;
+      flex: 0 0 18px;
+      background: rgba(33,212,253,.12);
+      border:1px solid rgba(33,212,253,.28);
+      position:relative;
+      margin-top: 2px;
+    }
+    .tick::after{
+      content:"";
+      position:absolute;
+      left:5px; top:3px;
+      width:6px; height:9px;
+      border-right:2px solid rgba(33,212,253,.9);
+      border-bottom:2px solid rgba(33,212,253,.9);
+      transform: rotate(40deg);
+    }
+
+    /* Comparison table */
+    section{
+      padding: 24px 0;
+    }
+    .sectionTitle{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing:-.02em;
+    }
+    .sectionSub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+    .tableWrap{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+    th, td{
+      padding: 14px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align:left;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    th{
+      color: var(--text);
+      font-size: 13px;
+      letter-spacing:.03em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.04);
+    }
+    td strong{ color: var(--text); }
+    .center{ text-align:center; }
+    .yes{
+      display:inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+    }
+    .no{
+      display:inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.18);
+    }
+    .scrollHint{
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .tableScroller{ overflow:auto; }
+
+    /* FAQ accordion (CSS-only) */
+    .faq{
+      display:grid;
+      gap: 12px;
+    }
+    details{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,.16);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: var(--text);
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .chev{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      position:relative;
+      flex: 0 0 34px;
+    }
+    .chev::before, .chev::after{
+      content:"";
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      width: 14px;
+      height: 2px;
+      background: rgba(234,240,255,.75);
+      transform: translate(-50%, -50%);
+      transition: transform .18s ease;
+    }
+    .chev::after{ transform: translate(-50%, -50%) rotate(90deg); }
+    details[open] .chev::after{ transform: translate(-50%, -50%) rotate(0deg); }
+
+    .faqBody{
+      padding: 0 16px 16px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,.08);
+    }
+
+    footer{
+      padding: 26px 0 44px;
+      color: var(--muted);
+      text-align:center;
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .grid{ grid-template-columns: 1fr; }
+      .card{ max-width: 520px; margin: 0 auto; }
+      header{ padding-top: 44px; }
+      .tableWrap{ border-radius: 16px; }
+      table{ min-width: 680px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CSS-only toggle controls live before header/main so we can style via ~ -->
+  <input type="radio" name="bill" id="monthly" checked>
+  <input type="radio" name="bill" id="yearly">
+
+  <header class="wrap">
+    <div class="kicker"><span class="dot"></span> Simple pricing for complicated humans</div>
+    <h1>Pricing that scales with your ambition</h1>
+    <p class="sub">Pick a plan, ship faster, and pretend you always had a roadmap. Toggle monthly/yearly below (no JavaScript involved, because suffering builds character).</p>
+
+    <div class="billing" aria-label="Billing period toggle">
+      <div class="seg" role="tablist" aria-label="Billing period">
+        <label for="monthly">Monthly</label>
+        <label for="yearly">Yearly</label>
+      </div>
+      <span class="save">Save 20% yearly</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="grid">
+        <!-- Starter -->
+        <article class="card">
+          <div class="inner">
+            <div class="plan">
+              <h3>Starter</h3>
+              <span class="pill">For trying it out</span>
+            </div>
+            <p class="desc">Basic tools for personal projects and small teams who love limits.</p>
+
+            <div class="price" aria-label="Price">
+              <span class="num">
+                <span class="monthly">€12</span>
+                <span class="yearly">€115</span>
+              </span>
+              <span class="per">
+                <span class="monthly">/month</span>
+                <span class="yearly">/year</span>
+              </span>
+            </div>
+
+            <a class="btn" href="#">Start free trial</a>
+
+            <ul class="feats">
+              <li><span class="tick"></span>Up to 3 projects</li>
+              <li><span class="tick"></span>1 workspace</li>
+              <li><span class="tick"></span>Email support</li>
+              <li><span class="tick"></span>Basic analytics</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Pro -->
+        <article class="card">
+          <span class="popular">Most popular</span>
+          <div class="inner">
+            <div class="plan">
+              <h3>Pro</h3>
+              <span class="pill">Best value</span>
+            </div>
+            <p class="desc">For serious builders who want fewer “oops” moments in production.</p>
+
+            <div class="price" aria-label="Price">
+              <span class="num">
+                <span class="monthly">€29</span>
+                <span class="yearly">€279</span>
+              </span>
+              <span class="per">
+                <span class="monthly">/month</span>
+                <span class="yearly">/year</span>
+              </span>
+            </div>
+
+            <a class="btn primary" href="#">Get Pro</a>
+
+            <ul class="feats">
+              <li><span class="tick"></span>Unlimited projects</li>
+              <li><span class="tick"></span>3 workspaces</li>
+              <li><span class="tick"></span>Priority support</li>
+              <li><span class="tick"></span>Advanced analytics</li>
+              <li><span class="tick"></span>Team roles & permissions</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Business -->
+        <article class="card">
+          <div class="inner">
+            <div class="plan">
+              <h3>Business</h3>
+              <span class="pill">For teams</span>
+            </div>
+            <p class="desc">Compliance, admin controls, and features for people who love meetings.</p>
+
+            <div class="price" aria-label="Price">
+              <span class="num">
+                <span class="monthly">€59</span>
+                <span class="yearly">€569</span>
+              </span>
+              <span class="per">
+                <span class="monthly">/month</span>
+                <span class="yearly">/year</span>
+              </span>
+            </div>
+
+            <a class="btn" href="#">Talk to sales</a>
+
+            <ul class="feats">
+              <li><span class="tick"></span>Unlimited workspaces</li>
+              <li><span class="tick"></span>SAML SSO</li>
+              <li><span class="tick"></span>Audit logs</li>
+              <li><span class="tick"></span>Custom roles</li>
+              <li><span class="tick"></span>Dedicated onboarding</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Feature comparison -->
+    <section>
+      <h2 class="sectionTitle">Feature comparison</h2>
+      <p class="sectionSub">A boring table that saves you from “Wait, does this include…?” emails.</p>
+
+      <div class="tableWrap">
+        <div class="tableScroller">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="center">Starter</th>
+                <th class="center">Pro</th>
+                <th class="center">Business</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Projects</strong></td>
+                <td class="center">3</td>
+                <td class="center">Unlimited</td>
+                <td class="center">Unlimited</td>
+              </tr>
+              <tr>
+                <td><strong>Workspaces</strong></td>
+                <td class="center">1</td>
+                <td class="center">3</td>
+                <td class="center">Unlimited</td>
+              </tr>
+              <tr>
+                <td><strong>Analytics</strong></td>
+                <td class="center"><span class="yes" title="Yes"></span></td>
+                <td class="center"><span class="yes" title="Yes"></span></td>
+                <td class="center"><span class="yes" title="Yes"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Team roles</strong></td>
+                <td class="center"><span class="no" title="No"></span></td>
+                <td class="center"><span class="yes" title="Yes"></span></td>
+                <td class="center"><span class="yes" title="Yes"></span></td>
+              </tr>
+              <tr>
+                <td><strong>SAML SSO</strong></td>
+                <td class="center"><span class="no"></span></td>
+                <td class="center"><span class="no"></span></td>
+                <td class="center"><span class="yes"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Audit logs</strong></td>
+                <td class="center"><span class="no"></span></td>
+                <td class="center"><span class="no"></span></td>
+                <td class="center"><span class="yes"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Support</strong></td>
+                <td class="center">Email</td>
+                <td class="center">Priority</td>
+                <td class="center">Dedicated</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="scrollHint">Tip: on mobile, scroll the table sideways.</div>
+    </section>
+
+    <!-- FAQ (CSS-only accordion using details/summary) -->
+    <section>
+      <h2 class="sectionTitle">FAQ</h2>
+      <p class="sectionSub">Questions everyone asks, but nobody reads until 2 minutes before buying.</p>
+
+      <div class="faq">
+        <details>
+          <summary>
+            Can I cancel anytime?
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="faqBody">
+            Yes. Cancel anytime. Your plan stays active until the billing period ends. No surprise hostage situation.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Do you offer refunds?
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="faqBody">
+            If you’re within the first 14 days and you didn’t abuse the service like a lab rat, refunds are typically fine.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            What does “yearly saves 20%” mean?
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="faqBody">
+            The yearly price is discounted compared to paying monthly for 12 months. It’s math. Annoying, but real.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Is this toggle really CSS-only?
+            <span class="chev" aria-hidden="true"></span>
+          </summary>
+          <div class="faqBody">
+            Yep. Radio buttons + <code>:checked</code> + sibling selectors. JavaScript is not invited to this party.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y">2026</span> Your SaaS. All rights reserved. Terms written by someone who hates fun.
+    </footer>
+  </main>
+
+  <!-- tiny no-JS year label: optional; remove if you want pure purity -->
+  <script>
+    // If you want 100% no JS, delete this script and type the year manually.
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

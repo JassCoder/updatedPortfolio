@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Éclat — Luxury Dining</title>
+    <meta name="description" content="Éclat — luxury dining experience. Seasonal tasting menu, fine wines, impeccable service." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Skip link for accessibility -->
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- Header / Sticky Nav -->
+    <header class="header">
+      <nav class="nav container">
+        <a class="brand" href="#">
+          <span class="brand__mark">É</span>
+          <span class="brand__name">Éclat</span>
+          <span class="brand__sub">fine dining</span>
+        </a>
+
+        <!-- CSS-only checkbox hack -->
+        <input type="checkbox" id="nav-toggle" class="nav__toggle" />
+        <label for="nav-toggle" class="nav__burger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </label>
+
+        <div class="nav__links">
+          <a href="#menu">Menu</a>
+          <a href="#story">Story</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav__cta">
+          <a class="btn btn--ghost" href="#menu">View Menu</a>
+          <a class="btn" href="#contact">Reserve</a>
+        </div>
+
+        <!-- Mobile overlay panel -->
+        <div class="nav__panel">
+          <div class="nav__panel-inner">
+            <a href="#menu" onclick="document.getElementById('nav-toggle').checked=false">Menu</a>
+            <a href="#story" onclick="document.getElementById('nav-toggle').checked=false">Story</a>
+            <a href="#testimonials" onclick="document.getElementById('nav-toggle').checked=false">Reviews</a>
+            <a href="#gallery" onclick="document.getElementById('nav-toggle').checked=false">Gallery</a>
+            <a href="#contact" onclick="document.getElementById('nav-toggle').checked=false">Contact</a>
+            <div class="nav__panel-cta">
+              <a class="btn btn--ghost" href="#menu" onclick="document.getElementById('nav-toggle').checked=false">View Menu</a>
+              <a class="btn" href="#contact" onclick="document.getElementById('nav-toggle').checked=false">Reserve</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="kicker">Seasonal • Tasting • Wine Pairing</p>
+            <h1>Luxury dining, designed like a masterpiece.</h1>
+            <p class="lead">
+              An intimate tasting journey inspired by modern European cuisine.
+              Crafted plates, rare wines, and service that actually remembers you exist.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--lg" href="#contact">Reserve a Table</a>
+              <a class="btn btn--ghost btn--lg" href="#menu">Explore Menu</a>
+            </div>
+
+            <div class="hero__meta">
+              <div class="meta">
+                <span class="meta__label">Hours</span>
+                <span class="meta__value">Tue–Sun • 18:00–23:30</span>
+              </div>
+              <div class="meta">
+                <span class="meta__label">Dress Code</span>
+                <span class="meta__value">Elegant</span>
+              </div>
+              <div class="meta">
+                <span class="meta__label">Chef’s Table</span>
+                <span class="meta__value">Limited seats</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__card">
+            <div class="card">
+              <div class="card__top">
+                <p class="card__title">Tonight’s Highlight</p>
+                <p class="card__tag">Chef’s tasting</p>
+              </div>
+              <div class="card__body">
+                <p class="card__headline">7-course seasonal menu</p>
+                <p class="card__text">
+                  Optional wine pairing curated by our sommelier.
+                </p>
+
+                <ul class="list">
+                  <li>Amuse-bouche + 6 courses</li>
+                  <li>Vegetarian friendly options</li>
+                  <li>Wine pairing available</li>
+                </ul>
+              </div>
+              <div class="card__bottom">
+                <a class="btn btn--wide" href="#contact">Book Now</a>
+                <p class="hint">Confirmation in under 2 minutes*</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story / Features -->
+      <section id="story" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>Where elegance meets restraint.</h2>
+            <p>
+              Minimal ingredients, maximal technique. We keep it refined, not loud.
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="feature">
+              <div class="feature__icon">✦</div>
+              <h3>Seasonal Ingredients</h3>
+              <p>Menus evolve weekly based on local availability and peak freshness.</p>
+            </article>
+
+            <article class="feature">
+              <div class="feature__icon">♜</div>
+              <h3>Sommelier Pairings</h3>
+              <p>Old-world classics and modern producers, chosen to elevate each course.</p>
+            </article>
+
+            <article class="feature">
+              <div class="feature__icon">⟡</div>
+              <h3>Intimate Atmosphere</h3>
+              <p>Soft lighting, curated sound, and a pace that respects the moment.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu -->
+      <section id="menu" class="section section--alt">
+        <div class="container">
+          <div class="section__head section__head--split">
+            <div>
+              <h2>Menu</h2>
+              <p>Signature dishes and seasonal favorites. Prices are indicative.</p>
+            </div>
+            <a class="btn btn--ghost" href="#contact">Reserve for tasting</a>
+          </div>
+
+          <div class="grid grid--2">
+            <div class="menu-card">
+              <h3>Starters</h3>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Oyster + Citrus Mignonette</p>
+                  <p class="menu-item__desc">Chilled oyster, yuzu, pink pepper</p>
+                </div>
+                <span class="menu-item__price">€14</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Burrata, Fig, Basil Oil</p>
+                  <p class="menu-item__desc">Creamy burrata, aged balsamic</p>
+                </div>
+                <span class="menu-item__price">€16</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Truffle Mushroom Velouté</p>
+                  <p class="menu-item__desc">Forest mushrooms, black truffle</p>
+                </div>
+                <span class="menu-item__price">€18</span>
+              </div>
+            </div>
+
+            <div class="menu-card">
+              <h3>Mains</h3>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Seared Sea Bass</p>
+                  <p class="menu-item__desc">Saffron beurre blanc, fennel</p>
+                </div>
+                <span class="menu-item__price">€34</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Filet Mignon</p>
+                  <p class="menu-item__desc">Peppercorn jus, pommes purée</p>
+                </div>
+                <span class="menu-item__price">€42</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Wild Mushroom Risotto</p>
+                  <p class="menu-item__desc">White wine, parmesan, herbs</p>
+                </div>
+                <span class="menu-item__price">€28</span>
+              </div>
+            </div>
+
+            <div class="menu-card">
+              <h3>Desserts</h3>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Dark Chocolate Torte</p>
+                  <p class="menu-item__desc">Sea salt, espresso cream</p>
+                </div>
+                <span class="menu-item__price">€12</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Vanilla Bean Crème Brûlée</p>
+                  <p class="menu-item__desc">Caramelized top, fresh berries</p>
+                </div>
+                <span class="menu-item__price">€11</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Citrus Sorbet Trio</p>
+                  <p class="menu-item__desc">Lemon, blood orange, yuzu</p>
+                </div>
+                <span class="menu-item__price">€10</span>
+              </div>
+            </div>
+
+            <div class="menu-card">
+              <h3>Tasting</h3>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Chef’s 5-course</p>
+                  <p class="menu-item__desc">Seasonal selection</p>
+                </div>
+                <span class="menu-item__price">€69</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Chef’s 7-course</p>
+                  <p class="menu-item__desc">Includes signature plates</p>
+                </div>
+                <span class="menu-item__price">€89</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <p class="menu-item__name">Wine pairing</p>
+                  <p class="menu-item__desc">Sommelier curated</p>
+                </div>
+                <span class="menu-item__price">€45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>Guests say nice things. Shocking.</h2>
+            <p>Real-ish feedback vibes. Replace with your own content.</p>
+          </div>
+
+          <div class="grid grid--3">
+            <figure class="quote">
+              <blockquote>
+                “Every course felt intentional. The pacing, the plating, the flavors. Unreal.”
+              </blockquote>
+              <figcaption>
+                <span class="quote__name">Mira K.</span>
+                <span class="quote__meta">Anniversary dinner</span>
+              </figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                “Service was flawless without being overbearing. The wine pairing was a cheat code.”
+              </blockquote>
+              <figcaption>
+                <span class="quote__name">David L.</span>
+                <span class="quote__meta">Chef’s tasting</span>
+              </figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                “The sea bass and saffron sauce… I’m still thinking about it. Dangerous.”
+              </blockquote>
+              <figcaption>
+                <span class="quote__name">Anja P.</span>
+                <span class="quote__meta">Weekend reservation</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="section section--alt">
+        <div class="container">
+          <div class="section__head section__head--split">
+            <div>
+              <h2>Gallery</h2>
+              <p>Use real photos later. For now, elegant placeholders.</p>
+            </div>
+            <a class="btn btn--ghost" href="#contact">Private events</a>
+          </div>
+
+          <div class="gallery">
+            <div class="shot shot--wide">
+              <div class="shot__overlay">
+                <p>Signature plating</p>
+                <span>Detail-driven</span>
+              </div>
+            </div>
+            <div class="shot">
+              <div class="shot__overlay">
+                <p>Chef’s table</p>
+                <span>Limited</span>
+              </div>
+            </div>
+            <div class="shot">
+              <div class="shot__overlay">
+                <p>Wine cellar</p>
+                <span>Curated</span>
+              </div>
+            </div>
+            <div class="shot">
+              <div class="shot__overlay">
+                <p>Seasonal dessert</p>
+                <span>Balanced</span>
+              </div>
+            </div>
+            <div class="shot shot--tall">
+              <div class="shot__overlay">
+                <p>Ambient dining</p>
+                <span>Intimate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / Reservation CTA -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="reserve">
+            <div class="reserve__copy">
+              <h2>Reserve your evening.</h2>
+              <p>
+                Book your table. Ask for dietary accommodations. Pretend you’re not
+                excited. We won’t judge.
+              </p>
+
+              <div class="reserve__details">
+                <div class="meta">
+                  <span class="meta__label">Phone</span>
+                  <span class="meta__value">+385 1 0000 000</span>
+                </div>
+                <div class="meta">
+                  <span class="meta__label">Email</span>
+                  <span class="meta__value">reservations@eclat.restaurant</span>
+                </div>
+                <div class="meta">
+                  <span class="meta__label">Address</span>
+                  <span class="meta__value">Zagreb, Croatia</span>
+                </div>
+              </div>
+            </div>
+
+            <form class="form" action="#" method="post">
+              <div class="form__row">
+                <label>
+                  Name
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@email.com" required />
+                </label>
+              </div>
+
+              <div class="form__row">
+                <label>
+                  Date
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  Guests
+                  <select name="guests" required>
+                    <option value="">Select</option>
+                    <option>1</option><option>2</option><option>3</option><option>4</option>
+                    <option>5</option><option>6</option><option>7</option><option>8+</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Notes
+                <textarea name="notes" rows="4" placeholder="Dietary requests, celebrations, etc."></textarea>
+              </label>
+
+              <button class="btn btn--wide btn--lg" type="submit">Request Reservation</button>
+              <p class="hint">*This form is frontend-only. Hook it to a backend later.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <a class="brand brand--footer" href="#">
+            <span class="brand__mark">É</span>
+            <span class="brand__name">Éclat</span>
+            <span class="brand__sub">fine dining</span>
+          </a>
+          <p class="footer__text">
+            Luxury dining with a modern edge. Seasonal menus, curated wines, and calm elegance.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="#menu">Menu</a>
+          <a href="#story">Story</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="#contact">Reservations</a>
+          <a href="#">Private events</a>
+          <a href="#">Careers</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <p>Tue–Sun</p>
+          <p>18:00–23:30</p>
+          <p class="footer__fine">© <span id="year"></span> Éclat. All rights reserved.</p>
+        </div>
+      </div>
+      <script>
+        // tiny helper, optional
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

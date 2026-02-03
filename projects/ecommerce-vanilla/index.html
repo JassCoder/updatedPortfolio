@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vanilla Shop</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./index.html">VanillaShop</a>
+
+    <div class="topbar__right">
+      <input id="searchInput" class="input" placeholder="Search products..." />
+      <select id="sortSelect" class="input">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="name-asc">Name: A → Z</option>
+      </select>
+
+      <a class="cartlink" href="./cart.html">
+        Cart <span id="cartCount" class="badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Buy things you don’t need, efficiently.</h1>
+      <p>Vanilla JS store: products, details, cart, totals, persistence.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Products</h2>
+      <div id="productGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/pages/home.js"></script>
+</body>
+</html>

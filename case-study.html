@@ -1,116 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jas | Case Study</title>
-  <meta name="description" content="Case study layout: overview, problems, solutions, outcomes." />
-  <link rel="stylesheet" href="css/case-study.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A closer look at a restaurant landing page frontend project by Jaspreet Singh.">
+<meta name="theme-color" content="#f5f3ed">
+<title>Restaurant landing page — Jaspreet Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="js/portfolio.js" defer>
+</script>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="logo" aria-hidden="true"></span>
-        <span>Jas</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary">
-        <a href="about.html" class="underline">About</a>
-        <a href="projects.html" class="underline">Projects</a>
-        <a href="case-study.html" class="underline active">Case Study</a>
-        <a href="contact.html" class="underline">Contact</a>
-        <a class="nav-cta" href="contact.html">
-          <span class="dot" aria-hidden="true"></span>
-          Let’s work
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero reveal">
-      <div class="pill"><span class="dot"></span> Case Study</div>
-      <h1>Luxe Dining Landing</h1>
-      <p class="sub">
-        Build a premium landing page that feels expensive, loads fast, and reads perfectly on mobile.
-      </p>
-      <div class="cover" aria-hidden="true"></div>
-    </section>
-
-    <section class="layout">
-      <article class="content reveal delay-1">
-        <section class="block">
-          <h2>Overview</h2>
-          <p>
-            The client needed a high-end restaurant landing page with clear CTA flow and strong visual hierarchy.
-            Constraint: keep it light and fast, no dependencies.
-          </p>
-        </section>
-
-        <section class="block">
-          <h2>Problems</h2>
-          <ul>
-            <li>Generic typography made the brand feel cheap.</li>
-            <li>Sections weren’t scannable on mobile.</li>
-            <li>Hover states and motion were either missing or too loud.</li>
-          </ul>
-        </section>
-
-        <section class="block">
-          <h2>Solutions</h2>
-          <ul>
-            <li>Fluid typography using <code>clamp()</code> and controlled line-length.</li>
-            <li>Card-based layout with consistent spacing system.</li>
-            <li>Subtle motion: hover elevation, fades, gradient underline accents.</li>
-          </ul>
-        </section>
-
-        <section class="block">
-          <h2>Outcome</h2>
-          <ul>
-            <li>Premium feel with minimal visual noise.</li>
-            <li>Mobile-first layout that stays readable.</li>
-            <li>Structure that scales to a full multi-page site.</li>
-          </ul>
-        </section>
-
-        <section class="next">
-          <a class="btn" href="projects.html">← Back to Projects</a>
-          <a class="btn btn-primary" href="contact.html">Start a project</a>
-        </section>
-      </article>
-
-      <aside class="aside reveal delay-2">
-        <h3>Project Details</h3>
-        <div class="kv">
-          <div class="row"><span>Role</span><strong>Design + Frontend</strong></div>
-          <div class="row"><span>Stack</span><strong>HTML / CSS</strong></div>
-          <div class="row"><span>Focus</span><strong>Typography + UI polish</strong></div>
-          <div class="row"><span>Motion</span><strong>Subtle</strong></div>
-          <div class="row"><span>Deliverable</span><strong>Landing + case study</strong></div>
-        </div>
-
-        <div class="callout">
-          <p><strong>Tip:</strong> Replace this content with real metrics later (load time, conversion, etc.).</p>
-        </div>
-      </aside>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container foot">
-      <div>© <span id="year">2026</span> Jas.</div>
-      <div class="foot-links">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header">
+<a class="brand" href="index.html" aria-label="Jas, home">JAS<span>.</span>
+</a>
+<span class="nav-caption">A PRACTICE IN CURIOSITY</span>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span>+</span>
+</button>
+<nav id="navigation" aria-label="Main navigation">
+<a href="projects.html">Work</a>
+<a href="about.html">About</a>
+<a href="index.html#experience">Experience</a>
+<a class="nav-contact" href="contact.html">Let’s talk <span>↗</span>
+</a>
+</nav>
+</header>
+<main id="main">
+<section class="page-intro">
+<span class="eyebrow">PROJECT NOTES / WEB & INTERACTIVE</span>
+<h1>A little taste<br>of <em>atmosphere.</em>
+</h1>
+<p>A restaurant landing page exploration, bringing typography, imagery, and clear navigation to the table.</p>
+<a class="button" href="projects/Luxury Restaurant Landing Page/index.html">Explore the live demo ↗</a>
+</section>
+<section class="section case-content">
+<img class="case-image" src="projects/pic/resturant page.jpg" alt="Restaurant landing page preview">
+<div class="case-notes">
+<div>
+<span class="eyebrow">THE MEDIUM</span>
+<h2>Design for<br>
+<em>the senses.</em>
+</h2>
+</div>
+<div>
+<h3>The exploration</h3>
+<p>This frontend demo explores a restaurant’s digital presence through a landing page. The focus is on visual hierarchy, a sense of place, and helping visitors navigate the page.</p>
+<h3>The approach</h3>
+<p>Large imagery sets the atmosphere. A clear typographic hierarchy and structured sections make the content easy to follow. The implementation uses HTML and CSS.</p>
+<a class="text-link" href="projects.html">← Back to the collection</a>
+</div>
+</div>
+</section>
+<section class="contact-band">
+<span class="eyebrow">04 / WHAT’S NEXT?</span>
+<div class="contact-heading">
+<h2>Good things start<br>with a <em>conversation.</em>
+</h2>
+<a class="contact-arrow" href="mailto:sainijaspreet1999@gmail.com" aria-label="Email Jas">↗</a>
+</div>
+<div class="contact-bottom">
+<a href="mailto:sainijaspreet1999@gmail.com">sainijaspreet1999@gmail.com ↗</a>
+<div>
+<a href="https://github.com/JassCoder">GitHub ↗</a>
+<a href="https://www.linkedin.com/in/jaspretsinghanimator">LinkedIn ↗</a>
+<a href="https://linktr.ee/jaspreetsingh_">Elsewhere ↗</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<a class="brand" href="index.html">JAS<span>.</span>
+</a>
+<span>© 2026 Jaspreet Singh</span>
+<span>MADE OF MANY THINGS.</span>
+<a href="#top">Back to top ↑</a>
+</footer>
 </body>
 </html>

@@ -1,122 +1,284 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jas | Home</title>
-    <meta
-      name="description"
-      content="Designer-level portfolio: clean UI, subtle motion, premium typography."
-    />
-    <link rel="stylesheet" href="css/home.css" />
-  </head>
-  <body>
-    <header class="nav">
-      <div class="container nav-inner">
-        <a class="brand" href="index.html" aria-label="Home">
-          <span class="logo" aria-hidden="true"></span>
-          <span>Jas</span>
-        </a>
-
-        <nav class="nav-links" aria-label="Primary">
-          <a href="about.html" class="underline">About</a>
-          <a href="projects.html" class="underline">Projects</a>
-          <a href="case-study.html" class="underline">Case Study</a>
-          <a href="contact.html" class="underline">Contact</a>
-          <a class="nav-cta" href="contact.html">
-            <span class="dot" aria-hidden="true"></span>
-            Let’s work
-          </a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="reveal">
-            <span class="pill"
-              ><span class="dot"></span> Available for freelance · Frontend /
-              UI</span
-            >
-            <h1 class="headline">
-              Clean, fast websites with designer-level polish.
-            </h1>
-            <p class="subhead">
-              I build responsive interfaces that feel premium: crisp typography,
-              subtle motion, and layouts that don’t scream “template”.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="projects.html">View projects</a>
-              <a class="btn" href="case-study.html">Read a case study</a>
-              <a class="btn" href="contact.html">Contact</a>
-            </div>
-          </div>
-
-          <aside class="profile-card reveal delay-1" aria-label="Profile card">
-            <div class="mini-title">Profile</div>
-            <div class="profile-name">Jas</div>
-            <p class="profile-role">
-              Frontend Developer · UI / UX · HTML/CSS/JS
-            </p>
-
-            <div class="meta">
-              <div class="meta-row">
-                <span>Focus</span><strong>Clean UI + performance</strong>
-              </div>
-              <div class="meta-row">
-                <span>Stack</span><strong>HTML · CSS · JS</strong>
-              </div>
-              <div class="meta-row">
-                <span>Open to</span><strong>Remote / Zagreb</strong>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="quick-links">
-        <div class="container">
-          <div class="grid">
-            <a class="card" href="about.html">
-              <h2>About</h2>
-              <p>Short bio, strengths, and what you actually do.</p>
-            </a>
-
-            <a class="card" href="projects.html">
-              <h2>Projects</h2>
-              <p>Project cards with tags and clean UI.</p>
-            </a>
-
-            <a class="card" href="./projects/reels/index.html">
-              <h2>VFX and Animation reels</h2>
-              <p>vfx reels</p>
-            </a>
-
-            <a class="card" href="contact.html">
-              <h2>Contact</h2>
-              <p>Simple, readable, and easy to wire later.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container foot">
-        <div>© <span id="year">2026</span> Jas.</div>
-        <div class="foot-links">
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="case-study.html">Case Study</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+<html lang="en" id="top">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Jaspreet Singh is a multidisciplinary creative in Warsaw, connecting VFX, animation, real-time technology, and frontend development.">
+<meta name="theme-color" content="#f5f3ed">
+<title>Many disciplines. One curious mind. — Jaspreet Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/portfolio.css">
+<script src="js/portfolio.js" defer>
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header">
+<a class="brand" href="index.html" aria-label="Jas, home">JAS<span>.</span>
+</a>
+<span class="nav-caption">A PRACTICE IN CURIOSITY</span>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span>+</span>
+</button>
+<nav id="navigation" aria-label="Main navigation">
+<a href="projects.html">Work</a>
+<a href="about.html">About</a>
+<a href="index.html#experience">Experience</a>
+<a class="nav-contact" href="contact.html">Let’s talk <span>↗</span>
+</a>
+</nav>
+</header>
+<main id="main">
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow hero-kicker">
+<span class="status-dot">
+</span> JASPREET SINGH / MULTIDISCIPLINARY CREATIVE</div>
+<h1>Many disciplines.<br>One <em>curious</em>
+<br>mind<span class="orange">.</span>
+</h1>
+<p>I connect the dots between visual effects, animation, real-time worlds, and the web.</p>
+<div class="hero-actions">
+<a class="button" href="#work">Explore my work <span>↘</span>
+</a>
+<a class="showreel" href="https://vimeo.com/960285098">
+<span class="play-small">▶</span> Watch showreel</a>
+</div>
+<div class="hero-location">
+<span>⌖ WARSAW, POLAND</span>
+<span>ARTIST. BUILDER. EXPLORER.</span>
+</div>
+</div>
+<div class="orbit" role="img" aria-label="A connected practice: visual effects, animation, real-time worlds, and frontend development">
+<div class="orbit-caption">FIG. 01 — CONNECTING THE DOTS</div>
+<svg viewBox="0 0 560 480" aria-hidden="true">
+<defs>
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+<path d="M 24 0 L 0 0 0 24" fill="none" stroke="#deddd3" stroke-width=".6"/>
+</pattern>
+</defs>
+<rect width="560" height="480" fill="url(#grid)"/>
+<g fill="none" stroke="#b4b5a8">
+<circle cx="280" cy="240" r="150"/>
+<ellipse cx="280" cy="240" rx="205" ry="80" transform="rotate(-35 280 240)"/>
+<ellipse cx="280" cy="240" rx="205" ry="80" transform="rotate(35 280 240)"/>
+<path d="M80 240H480M280 50V430" stroke-dasharray="3 6"/>
+</g>
+<circle cx="280" cy="240" r="56" fill="#c85832"/>
+<text x="280" y="248" text-anchor="middle" fill="#fff9ed" font-family="Georgia,serif" font-style="italic" font-size="35">Jas.</text>
+<g fill="#242a27">
+<circle cx="157" cy="152" r="5"/>
+<circle cx="411" cy="164" r="5"/>
+<circle cx="130" cy="285" r="5"/>
+<circle cx="376" cy="355" r="5"/>
+</g>
+<g fill="#242a27" font-family="monospace" font-size="12">
+<text x="66" y="133">01 / VISUAL EFFECTS</text>
+<text x="356" y="145">02 / ANIMATION</text>
+<text x="28" y="314">03 / REAL-TIME</text>
+<text x="347" y="385">04 / DEVELOPMENT</text>
+</g>
+<g stroke="#c85832">
+<path d="M274 49h12m-6-6v12M68 240h12m-6-6v12M480 240h12m-6-6v12M274 431h12m-6-6v12"/>
+</g>
+</svg>
+<div class="orbit-bottom">
+<span>ART × TECHNOLOGY × CURIOSITY</span>
+<span>ALWAYS EXPLORING ↗</span>
+</div>
+</div>
+</section>
+<div class="discipline-strip">
+<span>VISUAL EFFECTS</span>
+<i>✳</i>
+<span>ANIMATION</span>
+<i>✳</i>
+<span>REAL-TIME WORLDS</span>
+<i>✳</i>
+<span>FRONTEND DEVELOPMENT</span>
+<i>✳</i>
+<span>ALWAYS CURIOUS</span>
+</div>
+<section class="section work" id="work">
+<div class="section-top">
+<span class="eyebrow">01 / SELECTED EXPLORATIONS</span>
+<span class="small-note">Different mediums. The same curiosity.</span>
+</div>
+<div class="work-heading">
+<h2>Things I’ve <em>made.</em>
+</h2>
+<div class="filters" role="group" aria-label="Filter work">
+<button class="active" data-filter="all" aria-pressed="true">All work</button>
+<button data-filter="vfx" aria-pressed="false">VFX & animation</button>
+<button data-filter="web" aria-pressed="false">Web & interactive</button>
+</div>
+</div>
+<p class="sr-only" id="filter-status" role="status">
+</p>
+<div class="project-grid">
+<article class="project" data-category="vfx">
+<a href="https://vimeo.com/960285098" aria-label="Watch Layout & cinematic storytelling">
+<div class="project-image">
+<div class="reel-art ">
+<span class="reel-note">JASPREET SINGH / LAYOUT REEL</span>
+<div class="frame-lines">
+</div>
+<span class="reel-word">Frame by frame.</span>
+<span class="play">▶</span>
+<span class="reel-foot">2024 <span>WATCH THE REEL ↗</span>
+</span>
+</div>
+</div>
+<div class="project-meta">
+<span>01 / LAYOUT REEL</span>
+<span>↗</span>
+</div>
+<h3>Layout & cinematic storytelling</h3>
+<p>Camera, composition, and the space between frames.</p>
+</a>
+</article>
+<article class="project" data-category="web">
+<a href="projects/ecommerce-vanilla/index.html" aria-label="Open E-commerce, from the ground up">
+<div class="project-image">
+<img src="projects/pic/e commerse.jpg" alt="E-commerce, from the ground up website preview" loading="lazy">
+</div>
+<div class="project-meta">
+<span>02 / WEB & INTERACTIVE</span>
+<span>↗</span>
+</div>
+<h3>E-commerce, from the ground up</h3>
+<p>A storefront built with vanilla JavaScript.</p>
+</a>
+</article>
+<article class="project" data-category="web">
+<a href="projects/Luxury Restaurant Landing Page/index.html" aria-label="Open A table worth booking">
+<div class="project-image">
+<img src="projects/pic/resturant page.jpg" alt="A table worth booking website preview" loading="lazy">
+</div>
+<div class="project-meta">
+<span>03 / WEB & INTERACTIVE</span>
+<span>↗</span>
+</div>
+<h3>A table worth booking</h3>
+<p>A restaurant landing page with an eye for atmosphere.</p>
+</a>
+</article>
+<article class="project" data-category="vfx">
+<a href="https://vimeo.com/468680009" aria-label="Watch Motion, character & possibility">
+<div class="project-image">
+<div class="reel-art motion-art">
+<span class="reel-note">JASPREET SINGH / ANIMATION & FX</span>
+<div class="frame-lines">
+</div>
+<span class="reel-word">In motion.</span>
+<span class="play">▶</span>
+<span class="reel-foot">SHOWREEL <span>WATCH THE REEL ↗</span>
+</span>
+</div>
+</div>
+<div class="project-meta">
+<span>04 / ANIMATION & FX</span>
+<span>↗</span>
+</div>
+<h3>Motion, character & possibility</h3>
+<p>A collection of 3D animation and FX work.</p>
+</a>
+</article>
+</div>
+<div class="work-end">
+<a class="text-link" href="projects.html">View the whole collection ↗</a>
+<span class="eyebrow">A CONTINUALLY EVOLVING PRACTICE</span>
+</div>
+</section>
+<section class="section approach" id="approach">
+<div>
+<span class="eyebrow">02 / A THREAD THROUGH IT ALL</span>
+<h2>I don’t fit in<br>one <em>box.</em>
+<span class="orange"> And<br>that’s the point.</span>
+</h2>
+</div>
+<div class="approach-copy">
+<p class="lead">An animator’s sense of movement. A compositor’s eye for detail. A developer’s instinct to make it work.</p>
+<p>I’m Jaspreet Singh — Jas for short. My work moves between cinematic images and interactive experiences. I bring artistic intuition and technical precision to the same table.</p>
+<p>From building worlds in Houdini and Unreal Engine to shaping interfaces in the browser, I’m interested in what happens when disciplines meet.</p>
+<a class="text-link" href="about.html">Meet the person behind the work ↗</a>
+<div class="tools">
+<span class="eyebrow">TOOLS IN MY ORBIT</span>
+<p>Houdini · Unreal Engine · Nuke · Maya · Blender<br>HTML · CSS · JavaScript · Python</p>
+</div>
+</div>
+</section>
+<section class="section experience" id="experience">
+<div class="section-top">
+<span class="eyebrow">03 / THE JOURNEY SO FAR</span>
+<span class="small-note">Across studios, cities, and disciplines.</span>
+</div>
+<h2>Experience, <em>connected.</em>
+</h2>
+<div class="timeline">
+<article class="job">
+<span class="eyebrow">11.2024 — Current</span>
+<div>
+<h3>Compositor (VFX)</h3>
+<span class="company">POSTER <span> / Zagreb, Croatia</span>
+</span>
+</div>
+<p>Integrating CG, live-action plates, and matte paintings. Relighting, grading, keying, and the detail that brings a shot together.</p>
+</article>
+<article class="job">
+<span class="eyebrow">04.2023 — 08.2024</span>
+<div>
+<h3>Layout & Previz Artist</h3>
+<span class="company">88 Pictures <span> / Mumbai, India</span>
+</span>
+</div>
+<p>Designing camera layouts for animated features, working with lighting and FX teams to connect cinematic framing with production needs.</p>
+</article>
+<article class="job">
+<span class="eyebrow">11.2020 — 04.2022</span>
+<div>
+<h3>3D Animator</h3>
+<span class="company">Xentrix Studios <span> / Bengaluru, India</span>
+</span>
+</div>
+<p>Character animation for Disney Junior, Netflix, and Playmobil productions, from blocking to refined motion and blend-shapes.</p>
+</article>
+<article class="job">
+<span class="eyebrow">10.2019 — 05.2020</span>
+<div>
+<h3>3D Generalist</h3>
+<span class="company">Pixel Popy Films <span> / Chandigarh, India</span>
+</span>
+</div>
+<p>Leading a small team on a Sikh heritage VFX film and working across modeling, rigging, and FX.</p>
+</article>
+</div>
+<a class="text-link" href="about.html">More about my background ↗</a>
+</section>
+<section class="contact-band">
+<span class="eyebrow">04 / WHAT’S NEXT?</span>
+<div class="contact-heading">
+<h2>Good things start<br>with a <em>conversation.</em>
+</h2>
+<a class="contact-arrow" href="mailto:sainijaspreet1999@gmail.com" aria-label="Email Jas">↗</a>
+</div>
+<div class="contact-bottom">
+<a href="mailto:sainijaspreet1999@gmail.com">sainijaspreet1999@gmail.com ↗</a>
+<div>
+<a href="https://github.com/JassCoder">GitHub ↗</a>
+<a href="https://www.linkedin.com/in/jaspretsinghanimator">LinkedIn ↗</a>
+<a href="https://linktr.ee/jaspreetsingh_">Elsewhere ↗</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<a class="brand" href="index.html">JAS<span>.</span>
+</a>
+<span>© 2026 Jaspreet Singh</span>
+<span>MADE OF MANY THINGS.</span>
+<a href="#top">Back to top ↑</a>
+</footer>
+</body>
 </html>
